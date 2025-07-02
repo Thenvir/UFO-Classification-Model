@@ -1,20 +1,47 @@
 import sys
+import re
 import requests
 from label_list import labels
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
 def get_model_inputs():
-    title = input('\n=== Enter the title of the image and press enter ===\n')
-    url = input('\n=== Paste the URL of the image and press enter ===\n')
-    print(f'\n=== Photo Submitted: "{title}" ===\n')
-    inputUrls = [
-        {
-            'Title': title,
-            'link': url,
-        }
-    ]
-    return [inputUrls, labels]
+    while True:
+        title = input('\n✨ 🛸   Enter the title of the image and press enter\n').strip()
+        url = input('\n✨ 🛸   Paste the URL of the image and press enter\n').strip()
+        if not title:
+            print('\n ❌ Title cannot be empty. Please try again.')
+            continue
+        if not url:
+            print('\n ❌ URL cannot be empty. Please try again.')
+            continue
+        try:
+            response = requests.get(url, stream=True, timeout=10)
+            if response.status_code != 200:
+                print(f'\n ❌ URL could not be reached (status code: {response.status_code}). Please double-check the URL and try again.')
+                continue
+            content_type = response.headers.get('Content-Type', '')
+            if not content_type.startswith('image/'):
+                print('\n ❌ URL does not point to an image. Please provide a direct image URL.')
+                continue
+            # Try to open with PIL to confirm it's a valid image
+            try:
+                img = Image.open(response.raw)
+                img.verify()  # Verify image integrity
+            except Exception:
+                print('\n ❌ The content at the URL is not a valid image. Please try again.')
+                continue
+        except Exception as e:
+            print(f'\n ❌ Error fetching the URL: {e}. Please try again.')
+            continue
+        print(f'\n✨ 🛸   Photo Submitted: "{title}"\n')
+        inputUrls = [
+            {
+                'Title': title,
+                'link': url,
+            }
+        ]
+        return [inputUrls, labels]
 
 def call_model(urls, labels):
     model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
