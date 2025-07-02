@@ -35,6 +35,7 @@ def get_model_inputs():
             print(f'\n ❌ Error fetching the URL: {e}. Please try again.')
             continue
         print(f'\n✨ 🛸   Photo Submitted: "{title}"\n')
+        print('\n🤠 📝   Checking your image...\n')
         inputUrls = [
             {
                 'Title': title,
