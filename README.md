@@ -64,10 +64,10 @@ python ufo-app.py
 
 ```
 ✨ 🛸   Enter the title of the image and press enter
-Mysterious light in the sky
+Something hovering in the sky
 
 ✨ 🛸   Paste the URL of the image and press enter
-https://example.com/my-ufo-image.jpg
+https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg
 
 🤠 📝   Checking your image...
 
