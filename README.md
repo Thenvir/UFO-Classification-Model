@@ -72,9 +72,9 @@ https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg
 🤠 📝   Checking your image...
 
 Accuracy of provided classification labels:
-1) airplane - 15.23%
-2) bird - 8.45%
-3) car - 2.12%
+1) a photo of a flying saucer - 92.06%
+4) a photo of a crop circle - 0.00%
+6) a photo of a cat - 0.00%
 ...
 ```
 
