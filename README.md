@@ -1,4 +1,4 @@
-# UFO Classification Model 🛸
+# UFO Classifier Using Pre-trained CLIP Models 🛸
 
 A small Python application that uses AI to classify images and detect any UFO-related phenomena. Upload an image URL and get predictions on what the image might contain!
 
@@ -27,7 +27,7 @@ Before you start, make sure you have:
 Open your command prompt/terminal and navigate to where you want to store the project. Then run:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/Thenvir/UFO-Classification-Model.git
 cd UFO-Classification-Model
 ```
 
