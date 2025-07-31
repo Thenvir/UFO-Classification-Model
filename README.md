@@ -96,7 +96,7 @@ You can easily add your own custom labels to make the app classify images into c
 
 ```python
 labels = [
-    ...default list here
+    ...default list here,
     "a photo of a triangular UFO",
     "a photo of a mettalic sphere UFO"
 ]
