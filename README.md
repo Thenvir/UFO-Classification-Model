@@ -97,7 +97,7 @@ You can easily add your own custom labels to make the app classify images into c
 ```python
 labels = [
     ...default list here,
-    "a photo of a Unidentified Submerged Object (USO)",
+    "a photo of an Unidentified Submerged Object (USO)",
 ]
 ```
 
