@@ -72,9 +72,9 @@ https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg
 🤠 📝   Checking your image...
 
 Accuracy of provided classification labels:
-1) a photo of a flying saucer - 92.06%
-4) a photo of a crop circle - 0.00%
-6) a photo of a cat - 0.00%
+1) a photo of a flying saucer - 78.92%
+2) a photo of a metallic sphere UFO - 4.74%
+3) a photo of a cat - 0.00%
 ...
 ```
 
@@ -97,8 +97,7 @@ You can easily add your own custom labels to make the app classify images into c
 ```python
 labels = [
     ...default list here,
-    "a photo of a triangular UFO",
-    "a photo of a mettalic sphere UFO"
+    "a photo of a Unidentified Submerged Object (USO)",
 ]
 ```
 
