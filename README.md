@@ -62,6 +62,7 @@ python ufo-app.py
 
 ## Example Usage
 
+<img src="https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg" align="right" width= "300" />
 <div style="display: flex; align-items: flex-start; gap: 20px;">
 
     $ python ufo-app.py
@@ -88,7 +89,6 @@ python ufo-app.py
     5) cylindrical UFO - 1.35%
     6) plasma orb UFO - 0.05%
 
-<img src="https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg" align="right" width= "300" />
 </div>
 
 ## Customizing Labels
