@@ -1,7 +1,7 @@
 import sys
 import re
 import requests
-from label_list import labels
+from label_list import classification_labels, cluster_labels
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
@@ -42,7 +42,7 @@ def get_model_inputs():
                 'link': url,
             }
         ]
-        return [inputUrls, labels]
+        return [inputUrls, classification_labels]
 
 def call_model(urls, labels):
     model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
@@ -62,14 +62,23 @@ def format_outputs(outputs):
     # The 1st element is our percentages
     return detached_probs.numpy()
 
-def print_outputs(outputs):
-    print('Accuracy of provided classification labels:')
+def print_outputs(outputs, label_list, analysis_type):
+    print(f'{analysis_type}:')
     for resultRowIndex, row in enumerate(outputs):
         for probability_idx, prob in enumerate(row):
-            print(str(probability_idx+1) + ")", labels[probability_idx], "-", format(prob, ".2%"))
+            print(str(probability_idx+1) + ")", label_list[probability_idx], "-", format(prob, ".2%"))
 
 if __name__ == '__main__':
-    [urls, labels] = get_model_inputs()
-    tensor_outputs = call_model(urls, labels)
+    [urls, classification_labels] = get_model_inputs()
+    
+    # First call with cluster_labels
+    tensor_outputs_cluster = call_model(urls, cluster_labels)
+    non_tensor_output_cluster = format_outputs(tensor_outputs_cluster)
+    print_outputs(non_tensor_output_cluster, cluster_labels, "Cluster analysis")
+    
+    print()  # Add spacing between outputs
+    
+    # Second call with classification_labels
+    tensor_outputs = call_model(urls, classification_labels)
     non_tensor_output = format_outputs(tensor_outputs)
-    print_outputs(non_tensor_output)
+    print_outputs(non_tensor_output, classification_labels, "Accuracy of provided classification labels")

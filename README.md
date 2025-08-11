@@ -62,21 +62,39 @@ python ufo-app.py
 
 ## Example Usage
 
-```
-✨ 🛸   Enter the title of the image and press enter
-Something hovering in the sky
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+<div style="flex: 1;">
 
-✨ 🛸   Paste the URL of the image and press enter
-https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg
+    $ python ufo-app.py
 
-🤠 📝   Checking your image...
+    ✨ 🛸   Enter the title of the image and press enter
+    Something hovering in the sky
 
-Accuracy of provided classification labels:
-1) a photo of a flying saucer - 78.92%
-2) a photo of a metallic sphere UFO - 4.74%
-3) a photo of a cat - 0.00%
-...
-```
+    ✨ 🛸   Paste the URL of the image and press enter
+    https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg
+
+    ✨ 🛸   Photo Submitted: "Something hovering in the sky"
+
+    🤠 📝   Checking your image...
+
+    Cluster analysis:
+    1) cluster of UFOs - 1.54%
+    2) single UFO - 98.46%
+
+    Accuracy of provided classification labels:
+    1) cigar shaped UFO - 13.41%
+    2) saucer shaped UFO - 79.55%
+    3) triangular shaped UFO - 5.14%
+    4) metallic sphere UFO - 0.51%
+    5) cylindrical UFO - 1.35%
+    6) plasma orb UFO - 0.05%
+
+</div>
+<div style="flex: 1; text-align: center;">
+    <image src="https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg" style="width: 300"/>
+</div>
+
+</div>
 
 ## Customizing Labels
 
