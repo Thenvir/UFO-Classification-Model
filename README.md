@@ -91,7 +91,7 @@ python ufo-app.py
 
 </div>
 <div style="flex: 1; text-align: center;">
-    <image src="https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg" style="width: 300"/>
+    <img src="https://api.time.com/wp-content/uploads/2016/02/150222-ufo-sightings-06.jpg" align="right" width= "300" />
 </div>
 
 </div>
